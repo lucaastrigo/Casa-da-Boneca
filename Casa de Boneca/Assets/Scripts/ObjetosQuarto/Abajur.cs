@@ -6,14 +6,9 @@ public class Abajur : MonoBehaviour
 {
     public GameObject Xadez;
 
+    bool foi;
     float shakeTime;
     Vector3 accelerationInput;
-
-    private bool foi;
-    private void Start()
-    {
-        //
-    }
 
     void Update()
     {
@@ -21,18 +16,16 @@ public class Abajur : MonoBehaviour
 
         if (!foi)
         {
-            if (accelerationInput.sqrMagnitude >= 5f)
+            if (accelerationInput.sqrMagnitude >= 5f || Input.GetKey(KeyCode.O))
             {
                 shakeTime += Time.deltaTime;
+
                 if (shakeTime > 0.3f)
                 {
-
                     Xadez.SetActive(true);
                     foi = true;
                 }
             }
         }
-
-
     }
 }
