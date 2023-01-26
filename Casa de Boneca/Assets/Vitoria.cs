@@ -66,7 +66,7 @@ public class Vitoria : MonoBehaviour
     IEnumerator Zeraste()
     {
         sm.AudioVitoria();
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(6); //tempo do audio de vitoria
         SceneManager.LoadScene("Vitoria");
     }
 }

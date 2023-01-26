@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class HealthHUD : MonoBehaviour
 {
-    public Slider slider;
+    //public Slider slider;
 
-    public void SetMaxHealth(float health)
-    {
-        slider.maxValue = health;
-    }
+    //public void SetMaxHealth(float health)
+    //{
+    //    slider.maxValue = health;
+    //}
 
-    public void SetHealth(float health)
-    {
-        slider.value = health;
-    }
+    //public void SetHealth(float health)
+    //{
+    //    slider.value = health;
+    //}
 }

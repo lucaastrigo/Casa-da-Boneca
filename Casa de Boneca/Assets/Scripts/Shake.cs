@@ -6,48 +6,19 @@ using UnityEngine;
 
 public class Shake : MonoBehaviour
 {
-    public float deathTime; //vida atual
     public float shakeMag;
-    public GameObject healthBar;
-
-    float timer; //maximo de vida
     Vector3 accelerationInput;
     Vector3 originalPosition;
-
-    private void Start()
-    {
-        timer = deathTime;
-
-
-        healthBar.GetComponent<HealthHUD>().SetMaxHealth(timer);
-    }
 
     void Update()
     {
         accelerationInput = Input.acceleration;
-        healthBar.GetComponent<HealthHUD>().SetHealth(deathTime);
 
         if (accelerationInput.sqrMagnitude >= 5f)
         {
             ShakeCamera();
 
             Handheld.Vibrate();
-
-            deathTime -= Time.deltaTime * 1.5f;
-
-            if(deathTime <= 0)
-            {
-                SceneManager.LoadScene("Derrota");
-            }
-        }
-        else
-        {
-            deathTime += Time.deltaTime / 5;
-
-            if(deathTime >= timer)
-            {
-                deathTime = timer;
-            }
         }
     }
 
