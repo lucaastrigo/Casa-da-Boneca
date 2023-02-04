@@ -1,13 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class XadrezGlobal : MonoBehaviour
 {
     public static int xadrezQuant;
     public bool botao;
+    public UnityEvent uEvent;
 
+    bool oneTime;
     Collider2D coll;
+
     void Start()
     {
         coll = GetComponent<Collider2D>();
@@ -38,10 +43,12 @@ public class XadrezGlobal : MonoBehaviour
             }
         }
 
-        if(xadrezQuant >= 4)
+        if(xadrezQuant >= 4 && !oneTime)
         {
             Globals.tabuleiroAberto = true;
-          
+            uEvent.Invoke();
+
+            oneTime = true;
         }
     }
 

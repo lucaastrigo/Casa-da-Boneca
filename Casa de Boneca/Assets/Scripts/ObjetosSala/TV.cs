@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class TV : MonoBehaviour
 {
@@ -18,9 +20,12 @@ public class TV : MonoBehaviour
     private int intDezena;
     private int intUnidade;
 
+    public UnityEvent azulejoTip;
+    public UnityEvent reiTip;
+
     void Start()
     {
-        
+        //
     }
 
     void Update()
@@ -45,12 +50,13 @@ public class TV : MonoBehaviour
         if(intTudo == 178)
         {
             GetComponent<Image>().sprite = Azulejo;
+            azulejoTip.Invoke();
         }
         else if(intTudo == 255)
         {
             GetComponent<Image>().sprite = Xadrez;
             Xadez.SetActive(true);
-
+            reiTip.Invoke();
         }
         else
         {

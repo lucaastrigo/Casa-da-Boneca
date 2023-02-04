@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class AtivarGlobais : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class AtivarGlobais : MonoBehaviour
     public bool tabuleiro;
 
     public GameObject xadrez;
+    public UnityEvent torneiraEvent;
 
     Collider2D coll;
     void Start()
@@ -41,6 +44,7 @@ public class AtivarGlobais : MonoBehaviour
                     else if(Globals.torneiraAberta && torneira)
                     {
                         AtivarTudo();
+                        torneiraEvent.Invoke();
                     }   
                     else if(Globals.tabuleiroAberto && tabuleiro)
                     {

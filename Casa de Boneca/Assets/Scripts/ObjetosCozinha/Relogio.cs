@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
+using UnityEditor.PackageManager;
 
 public class Relogio : MonoBehaviour
 {
@@ -18,6 +21,8 @@ public class Relogio : MonoBehaviour
 
     public GameObject Codigo;
 
+    public UnityEvent uEvent;
+
     Collider2D coll;
     void Start()
     {
@@ -33,6 +38,7 @@ public class Relogio : MonoBehaviour
             {
                 stopMoving = true;
                 Codigo.SetActive(true);
+                uEvent.Invoke();
                 print("cabo");
             }
             if (Input.touchCount > 0)
