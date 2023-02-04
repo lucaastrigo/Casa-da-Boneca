@@ -19,6 +19,7 @@ public class AllButtons : MonoBehaviour
     public Button SetaBaixoCima;
 
     public Animator anim;
+    private bool cdBool;
 
     Button MainButton;
     void Start()
@@ -86,8 +87,14 @@ public class AllButtons : MonoBehaviour
 
     public IEnumerator Wait()
     {
-        anim.SetTrigger("Fade");
-        yield return new WaitForSeconds(0.8f);    
-        MainButton.onClick.Invoke();
+        if (!cdBool)
+        {
+            cdBool = true;
+            anim.SetTrigger("Fade");
+            yield return new WaitForSeconds(0.8f);
+            MainButton.onClick.Invoke();
+            cdBool = false;
+        }
+
     }
 }

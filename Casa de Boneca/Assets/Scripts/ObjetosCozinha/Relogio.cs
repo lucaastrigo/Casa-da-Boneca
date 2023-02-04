@@ -4,8 +4,6 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
-using UnityEditor.PackageManager;
-
 public class Relogio : MonoBehaviour
 {
     public float speed = 5f;
