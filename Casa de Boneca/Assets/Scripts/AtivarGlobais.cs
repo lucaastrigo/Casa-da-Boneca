@@ -25,6 +25,11 @@ public class AtivarGlobais : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.J) && torneira)
+        {
+            torneiraEvent.Invoke();
+        }
+
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -32,7 +37,6 @@ public class AtivarGlobais : MonoBehaviour
 
             if (touch.phase == TouchPhase.Began)
             {
-
                 Collider2D touchCollider = Physics2D.OverlapPoint(touchPosition);
 
                 if (coll == touchCollider)
@@ -48,9 +52,7 @@ public class AtivarGlobais : MonoBehaviour
                     }   
                     else if(Globals.tabuleiroAberto && tabuleiro)
                     {
-                        
                         AtivarTudo();
-          
                     }
                 }
             }

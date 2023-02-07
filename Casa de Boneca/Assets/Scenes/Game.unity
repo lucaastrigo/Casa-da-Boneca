@@ -2402,14 +2402,40 @@ MonoBehaviour:
   TvNumber: {fileID: 1533079454}
   Xadez: {fileID: 1434694714}
   Original: {fileID: 21300000, guid: 4362b8f69d1259c429fc1c134de9f95c, type: 3}
-  Azulejo: {fileID: 21300000, guid: 689a7382b3ed074409b4a60d7b809c2e, type: 3}
-  Xadrez: {fileID: 21300000, guid: 80ea4868eff961b419f63a99034102e7, type: 3}
+  Azulejo: {fileID: 21300000, guid: 8dfa28b966a752d4ab71b82270bf071a, type: 3}
+  Xadrez: {fileID: 21300000, guid: f490bad10451dfe47a0f77f876fb2a03, type: 3}
   azulejoTip:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2005353456}
+        m_TargetAssemblyTypeName: Tips, Assembly-CSharp
+        m_MethodName: NewTip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: 8dfa28b966a752d4ab71b82270bf071a,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   reiTip:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2005353456}
+        m_TargetAssemblyTypeName: Tips, Assembly-CSharp
+        m_MethodName: NewTip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: f490bad10451dfe47a0f77f876fb2a03,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &242069918
 GameObject:
   m_ObjectHideFlags: 0
@@ -5408,7 +5434,6 @@ GameObject:
   - component: {fileID: 513743898}
   - component: {fileID: 513743900}
   - component: {fileID: 513743899}
-  - component: {fileID: 513743901}
   m_Layer: 0
   m_Name: Dolls_Image
   m_TagString: Untagged
@@ -5474,63 +5499,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513743897}
   m_CullTransparentMesh: 0
---- !u!114 &513743901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 513743897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 513743899}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2005353456}
-        m_TargetAssemblyTypeName: Tips, Assembly-CSharp
-        m_MethodName: NewTip
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 21300000, guid: dc594d24fdc8d034ca074dbf586954c3,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -10996,13 +10964,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2005353456}
+        m_TargetAssemblyTypeName: Tips, Assembly-CSharp
+        m_MethodName: NewTip
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 21300000, guid: dc594d24fdc8d034ca074dbf586954c3,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11961,7 +11930,20 @@ MonoBehaviour:
   xadrez: {fileID: 0}
   torneiraEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2005353456}
+        m_TargetAssemblyTypeName: Tips, Assembly-CSharp
+        m_MethodName: NewTip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: 84e3e5e49f2087549bc96461981ad325,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &932023096
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15143,13 +15125,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2005353456}
+        m_TargetAssemblyTypeName: Tips, Assembly-CSharp
+        m_MethodName: NewTip
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 21300000, guid: 84e3e5e49f2087549bc96461981ad325,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -15328,7 +15311,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -24.999512, y: 180}
+  m_AnchoredPosition: {x: -24.999481, y: 180}
   m_SizeDelta: {x: 164, y: 112.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1128603200
@@ -20102,6 +20085,7 @@ GameObject:
   - component: {fileID: 1434694716}
   - component: {fileID: 1434694717}
   - component: {fileID: 1434694718}
+  - component: {fileID: 1434694719}
   m_Layer: 0
   m_Name: "Pe\xE7aXadrez"
   m_TagString: Untagged
@@ -20223,6 +20207,36 @@ MonoBehaviour:
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 21300000, guid: 135d5680a4d77804d9fe6bf91d53c575,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1434694719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434694714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44c22061a9aa506489f858e7b3d4812d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ativar: []
+  desativar: []
+  uEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2005353456}
+        m_TargetAssemblyTypeName: Tips, Assembly-CSharp
+        m_MethodName: NewTip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: da2f3f1b892c5a74697ef6bc86d0789f,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
@@ -23406,6 +23420,19 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2005353456}
+        m_TargetAssemblyTypeName: Tips, Assembly-CSharp
+        m_MethodName: NewTip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: 56903e78ee13ed44e8d71393377a9d5d,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

@@ -44,29 +44,25 @@ public class Tips : MonoBehaviour
     {
         for (int i = 0; i < tipSlots.Count; i++)
         {
-            if (!tipSlots[i].activeSelf)
+            if (tipImages[i].sprite != tipSprite && !tipSlots[i].activeSelf)
             {
                 tipSlots[i].SetActive(true);
                 tipImages[i].sprite = tipSprite;
                 break;
             }
+
+            //if (!tipSlots[i].activeSelf)
+            //{
+            //    tipSlots[i].SetActive(true);
+            //    tipImages[i].sprite = tipSprite;
+            //    break;
+            //}
         }
     }
 
     public void ActivateBigTip()
     {
         if (!bigTipPanel.activeSelf) bigTipPanel.SetActive(true);
-
-        //Tooltip[] tooltips = FindObjectsOfType<Tooltip>();
-
-        //for (int i = 0; i < tooltips.Length; i++)
-        //{
-        //    if (tooltips[i].on)
-        //    {
-        //        tooltips[i].anim.SetTrigger("off");
-        //        tooltips[i].on = !tooltips[i].on;
-        //    }
-        //}
     }
 
     public void SetTipImage(Image tipI)
