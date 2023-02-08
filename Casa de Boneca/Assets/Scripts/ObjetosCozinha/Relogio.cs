@@ -22,9 +22,12 @@ public class Relogio : MonoBehaviour
     public UnityEvent uEvent;
 
     Collider2D coll;
+    AudioSource audSrc;
+
     void Start()
     {
         coll = GetComponent<Collider2D>();
+        if (GetComponent<AudioSource>() != null) audSrc = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -52,6 +55,8 @@ public class Relogio : MonoBehaviour
                     if (coll == touchCollider)
                     {
                         isMoving = true;
+                        //som de ponteiro fica ON
+                        if (audSrc != null) audSrc.volume = 0.7f;
                     }
                 }
                 if (touch.phase == TouchPhase.Moved)
@@ -66,6 +71,9 @@ public class Relogio : MonoBehaviour
                 if (touch.phase == TouchPhase.Ended)
                 {
                     isMoving = false;
+                    //som de ponteiro fica OFF
+                    if(audSrc != null) audSrc.volume = 0;
+
                     if (correto)
                     {
                         if (ponteiroMaior) numCertoMaior = 1;

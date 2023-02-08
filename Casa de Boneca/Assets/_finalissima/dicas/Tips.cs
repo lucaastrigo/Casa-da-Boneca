@@ -10,6 +10,7 @@ public class Tips : MonoBehaviour
     public RectTransform contentSize;
     public List<GameObject> tipSlots = new List<GameObject>();
     public List<Image> tipImages = new List<Image>();
+    public List<Sprite> tipSprites = new List<Sprite>();
 
     public GameObject bigTipPanel;
     public Image bigTipImage;
@@ -44,12 +45,20 @@ public class Tips : MonoBehaviour
     {
         for (int i = 0; i < tipSlots.Count; i++)
         {
-            if (tipImages[i].sprite != tipSprite && !tipSlots[i].activeSelf)
+            if (!tipSlots[i].activeSelf && !tipSprites.Contains(tipSprite))
             {
                 tipSlots[i].SetActive(true);
                 tipImages[i].sprite = tipSprite;
+                tipSprites.Add(tipSprite);
                 break;
             }
+
+            //if (tipImages[i].sprite != tipSprite && !tipSlots[i].activeSelf)
+            //{
+            //    tipSlots[i].SetActive(true);
+            //    tipImages[i].sprite = tipSprite;
+            //    break;
+            //}
 
             //if (!tipSlots[i].activeSelf)
             //{

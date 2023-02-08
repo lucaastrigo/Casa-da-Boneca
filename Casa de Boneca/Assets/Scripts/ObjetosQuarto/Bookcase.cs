@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class Bookcase : MonoBehaviour
 {
     public List<Book> books = new List<Book>();
     public GameObject interrupter;
+    public UnityEvent soundEvent;
 
     [HideInInspector] public int selectedBooks;
     [HideInInspector] public int book1pos, book2pos;
@@ -89,5 +92,7 @@ public class Bookcase : MonoBehaviour
 
         list[indexA] = list[indexB];
         list[indexB] = tmp;
+
+        if(soundEvent != null) soundEvent.Invoke();
     }
 }

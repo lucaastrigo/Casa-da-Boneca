@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Cadeado : MonoBehaviour
 {
     public GameObject geladeira;
     public GameObject cadeado;
+    public UnityEvent soundEvent;
 
     public TMP_Text textNum1;
     public TMP_Text textNum2;
@@ -18,6 +21,7 @@ public class Cadeado : MonoBehaviour
     public int correctNum3;
 
     private bool canMove;
+    private bool oneTime;
 
     private int num1;
     private int num2;
@@ -39,6 +43,12 @@ public class Cadeado : MonoBehaviour
             canMove = false;
             geladeira.SetActive(true);
             cadeado.SetActive(false);
+
+            if (soundEvent != null && !oneTime)
+            {
+                soundEvent.Invoke(); 
+                oneTime = true;
+            }
 
             textNum1.color = new Color(0.5f, 1f, 0.5f);
             textNum2.color = new Color(0.5f, 1f, 0.5f);

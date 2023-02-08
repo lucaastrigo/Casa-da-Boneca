@@ -14,6 +14,7 @@ public class InterruptorGlobal : MonoBehaviour
     public static bool numCozinha;
     public static bool numSalaDeEstar;
     public static bool numQuarto;
+
     void Start()
     {
         coll = GetComponent<BoxCollider2D>();
@@ -21,14 +22,13 @@ public class InterruptorGlobal : MonoBehaviour
 
     void Update()
     {
-
         if(numBanheiro && numCozinha && numSalaDeEstar && numQuarto)
         {
             Globals.interruptoresLigados = true;
         }
+
         if (Input.touchCount > 0)
         {
-
             Touch touch = Input.GetTouch(0);
             Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
 
@@ -59,8 +59,6 @@ public class InterruptorGlobal : MonoBehaviour
                     {
                         numQuarto = true;
                     }
-
-
                 }
             }
         }

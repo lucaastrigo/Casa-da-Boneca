@@ -1,21 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class Simbolos : MonoBehaviour
 {
-
-    public int ordemClicks;
     public static int ordemCerta;
-
     public static bool canClick;
     public static bool errado;
 
+    public int ordemClicks;
     public GameObject armario;
     public SoundManager sm;
+    public UnityEvent soundEvent;
 
+    bool oneTime;
     SpriteRenderer sprite;
     Collider2D coll;
+
     void Start()
     {
         coll = GetComponent<Collider2D>();
@@ -33,7 +36,6 @@ public class Simbolos : MonoBehaviour
 
             if (touch.phase == TouchPhase.Began)
             {
-
                 Collider2D touchCollider = Physics2D.OverlapPoint(touchPosition);
 
                 if (coll == touchCollider)
@@ -51,19 +53,7 @@ public class Simbolos : MonoBehaviour
                             errado = true;
                         }
                     }
-
                 }
-                if (!coll == touchCollider)
-                {
-                }
-            }
-
-            if (touch.phase == TouchPhase.Moved)
-            {
-            }
-
-            if (touch.phase == TouchPhase.Ended)
-            {
             }
         }
 
@@ -81,8 +71,13 @@ public class Simbolos : MonoBehaviour
             coll.enabled = false;
             Globals.armarioAberto = true;
             armario.SetActive(true);
-        }
 
+            if (soundEvent != null && !oneTime)
+            {
+                soundEvent.Invoke();
+                oneTime = true;
+            }
+        }
     }
 
     IEnumerator Wrong()

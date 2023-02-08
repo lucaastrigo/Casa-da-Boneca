@@ -22,10 +22,16 @@ public class TV : MonoBehaviour
 
     public UnityEvent azulejoTip;
     public UnityEvent reiTip;
+    public UnityEvent canalCerto;
+
+    public AudioClip sintonizado;
+    public AudioClip chiado;
+
+    AudioSource audSrc;
 
     void Start()
     {
-        //
+        audSrc = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -51,16 +57,23 @@ public class TV : MonoBehaviour
         {
             GetComponent<Image>().sprite = Azulejo;
             azulejoTip.Invoke();
+            canalCerto.Invoke();
+
+            if (audSrc != null) audSrc.clip = sintonizado;
         }
         else if(intTudo == 255)
         {
             GetComponent<Image>().sprite = Xadrez;
             Xadez.SetActive(true);
             reiTip.Invoke();
+            canalCerto.Invoke();
+
+            if (audSrc != null) audSrc.clip = sintonizado;
         }
         else
         {
             GetComponent<Image>().sprite = Original;
+            if (audSrc != null) audSrc.clip = chiado;
         }
 
     }
